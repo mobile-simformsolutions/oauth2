@@ -68,6 +68,7 @@ Credentials handleAccessTokenResponse(http.Response response, Uri tokenEndpoint,
     }
 
     var expiresIn = parameters['expires_in'];
+    expiresIn = int.parse(expiresIn);
     if (expiresIn != null && expiresIn is! int) {
       throw FormatException(
           'parameter "expires_in" was not an int, was "$expiresIn"');
